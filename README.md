@@ -6,7 +6,7 @@ How to conduct Unit Tests for Quiz App
 Note: Must have Junit installed to run tests
 
 ```bash 
-  git clone https://github.com/taamir-khan/QuizApplication
+git clone https://github.com/taamir-khan/QuizApplication
   ```
 
 ```bash
