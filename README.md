@@ -13,3 +13,5 @@ git clone https://github.com/taamir-khan/QuizApplication
 ```bash
 cd QuizApp/src/unit_tests && javac Test.java
 ```
+
+Alternatively, go to your IDE, open this application, and then press run under QuizApp/src/unit_tests/Test.java as there is an issue compiling using the terminal.
