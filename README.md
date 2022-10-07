@@ -10,5 +10,5 @@ git clone https://github.com/taamir-khan/QuizApplication
   ```
 
 ```bash
-cd QuizApp/src/unit_tests && javac Test.java
+cd QuizApplication/src/unit_tests && javac Test.java
 ```
