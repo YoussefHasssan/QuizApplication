@@ -16,7 +16,7 @@ cd QuizApp/src/unit_tests && javac Test.java
 
 Alternatively, go to your IDE, open this application, and then press run under QuizApp/src/unit_tests/Test.java as there is an issue compiling using the terminal.
 
-Lab 2
+*Lab 2*
 
 You can clone as shown above, or if you created a branch then you can pull the changes:
 ```bash
