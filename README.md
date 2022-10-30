@@ -22,7 +22,7 @@ You can clone as shown above, or if you created a branch then you can pull the c
 ```bash
 git pull
 ```
-There are too many files in a node module, so ```bash app.js ``` is the only file added, I suggest you create your own react file and then copy app.js into it.
+There are too many files in a node module, so ```app.js ``` is the only file added, I suggest you create your own react file and then copy app.js into it.
 
 Here is how to test get requests from the REST server:
 ```bash
