@@ -1,5 +1,8 @@
 package c;
 
+
+import java.util.ArrayList;
+
 import org.restlet.*;
 import org.restlet.data.Protocol;
 import org.restlet.resource.Get;
@@ -11,21 +14,19 @@ import com.google.gson.GsonBuilder;
 
 public class FirstServerResource extends ServerResource {
 
-    //private static int count = 0;
+    private static int count = 0;
     private static String json_string;
-    private static String score_string;
+    private static ArrayList<QuestionAnswer> allQuestionsAnswers = null;
+    private static GsonBuilder builder = new GsonBuilder();
+    private static Gson gson = builder.create();
 
     public static void main(String[] args) throws Exception {
 
-        GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
-        Gson gson = builder.create();
 
-        Questions one_q = new Questions("How many members of the US Congress?", "435");
-        Score one_s = new Score(1);
+        AllQuestions allQuestions = new AllQuestions();
 
-        json_string = gson.toJson(one_q);
-        score_string = gson.toJson(one_s);
+        allQuestionsAnswers = allQuestions.getAllQuestionsAnswers();
 
 
         // Create the HTTP server and listen on port 8182
@@ -35,7 +36,10 @@ public class FirstServerResource extends ServerResource {
 
     @Get
     public String toString() {
-        // count++;
+        count++;
+        count = count % allQuestionsAnswers.size();
+        QuestionAnswer questionAnswer = allQuestionsAnswers.get(count);
+        json_string = gson.toJson(questionAnswer);
         return  json_string;  // "Question " + Integer.valueOf(count).toString() + ": " +
     }
 
