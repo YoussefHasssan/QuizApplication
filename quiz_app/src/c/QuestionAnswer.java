@@ -3,12 +3,14 @@ package c;
 
 public class QuestionAnswer {
 
+    private int id;
     private String question;
     private String answer;
 
-    public QuestionAnswer(String q, String a) {
-        question = q;
-        answer = a;
+    public QuestionAnswer(int id, String q, String a) {
+        this.id = id;
+        this.question = q;
+        this.answer = a;
     }
 
     public String getQuestion() {
@@ -25,6 +27,14 @@ public class QuestionAnswer {
 
     public void setAnswer(String a) {
         answer = a;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 

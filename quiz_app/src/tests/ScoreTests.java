@@ -15,21 +15,12 @@ public class ScoreTests {
     }
 
     @org.junit.Test
-    public void testUsr() {
-        Score s1 = Score.getInstance();
-        String expected = "Alan Turing";
-        s1.setUsr(expected);
-
-        assertSame(s1.getUsr(), expected);
-    }
-
-    @org.junit.Test
     public void testTotalQuestions() {
         Score s1 = Score.getInstance();
         int expected = 9998;
-        s1.setQuestions_total(expected);
+        s1.setTotal(expected);
 
-        assertEquals(s1.getQuestions_total(), expected);
+        assertEquals(s1.getTotal(), expected);
     }
 
 }

@@ -10,10 +10,10 @@ import java.util.ArrayList;
 public class AllQuestions {
 
     static final String JDBC_DRIVER = "org.h2.Driver";
-    static final String DB_URL = "jdbc:h2:~/test";
+    static final String DB_URL = "jdbc:h2:/Users/sin/test";
 
     static final String USER = "sa";
-    static final String PASS = "";
+    static final String PASS = "Password123";
 
     ArrayList<QuestionAnswer> questionArrayList = new ArrayList<QuestionAnswer>();
 
@@ -27,14 +27,15 @@ public class AllQuestions {
             conn = DriverManager.getConnection(DB_URL,USER,PASS);
 
 
-            String sql_select =  "SELECT * FROM QUESTIONS; ";
+            String sql_select =  "SELECT * FROM QUESTIONS;";
             stmt = conn.createStatement();
 
             ResultSet rs = stmt.executeQuery(sql_select);
             while (rs.next()) {
+                int id = rs.getInt("id");
                 String actualQuestion = rs.getString("question");
                 String actualAnswer = rs.getString("answer");
-                QuestionAnswer question = new QuestionAnswer(actualQuestion, actualAnswer);
+                QuestionAnswer question = new QuestionAnswer(id, actualQuestion, actualAnswer);
                 questionArrayList.add(question);
             }
 
