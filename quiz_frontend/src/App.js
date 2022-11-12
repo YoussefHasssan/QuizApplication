@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import React, { useState } from 'react';
@@ -7,6 +6,9 @@ import Button from 'react-bootstrap/Button';
 
 
 var db_answer = "";
+var id = "";
+
+var list_of_bookmarked_ids = [];
 
 function validate_answer(db_answer) {
   var user_answer = document.getElementById("answer_box").value;
@@ -19,7 +21,7 @@ function validate_answer(db_answer) {
   }
 }
 
-async function getData() {
+async function getData(bookmark) {
 
   fetch('http://127.0.0.1:5000/http://localhost:8182/GET').then(function (response) {
     return response.json();
@@ -27,12 +29,23 @@ async function getData() {
     console.log(data);
     document.getElementById("question-box").innerHTML = data["question"];
     db_answer = data["answer"];
-
+    id = String(data["id"]);
+    if (bookmark) {
+      list_of_bookmarked_ids.push(data["id"]);
+    }
+    //alert("id: " + id);
   }).catch(function (e) {
     console.log(e);
   });
 }
 
+function bookmarkQuestion() {
+  getData(true);
+}
+
+function done() {
+  console.log("List: ", list_of_bookmarked_ids);
+}
 
 
 function App() {
@@ -53,11 +66,17 @@ function App() {
           <div id="answer-box"></div>
           <input id="answer_box" type="text" value={answer} onChange={handleChange} />
 
-          <Button onClick={getData}>
-            Get Data
+          <Button onClick={() => getData(false)}>
+            Next Question
+          </Button>
+          <Button onClick={bookmarkQuestion}>
+            Bookmark Question
           </Button>
           <Button onClick={() => validate_answer(db_answer)}>
             Check Correctness
+          </Button>
+          <Button onClick={done}>
+            Done
           </Button>
         </header>
       </div>
