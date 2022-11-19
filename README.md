@@ -1,5 +1,5 @@
 # QuizApplication
-CSE 2102 Group 2 Quiz App
+Full Stack Quiz Application
 
 How to conduct Unit Tests for Quiz App
 
