@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Q Start</string>
+    <string name="greeting">Quiz</string>
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="next_button">Next</string>
+
+    <string name="q1">There are eight seas</string>
+    <string name="q2">There are seven contintents</string>
+    <string name="q3">2+3 = 6</string>
+    <string name="q4">(equal? (cube 3) 27)</string>
+
+</resources>
